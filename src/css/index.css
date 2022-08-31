@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+:root,
+html {
+  --white: #fff;
+  --blue: blue;
+  --grey-100: #ededed;
+  --grey-500: grey;
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+#previewer blockquote {
+  border-left: 4px solid var(--grey-500);
+  background-color: var(--grey-100);
+  font-style: italic;
+  padding: 0.025em 1.3em;
+}
+#previewer table {
+  border-collapse: collapse;
+}
+#previewer thead th,
+tfoot th {
+  font-weight: bold;
+  text-align: center;
+}
+#previewer th,
+td {
+  border: 1px solid var(--grey-500);
+  padding: 0.5em;
+}
