@@ -3,7 +3,6 @@ import DOMPurify from "dompurify";
 import { marked } from "marked";
 
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
@@ -21,9 +20,9 @@ export default function App() {
 
   return (
     <ThemeProvider theme={appliedTheme}>
-      <Container>
+      <main class="main__container">
         <Stack
-          spacing={2}
+          spacing={4}
           direction={{ sm: "column", md: "row" }}
           sx={{ width: "100%" }}
         >
@@ -35,13 +34,13 @@ export default function App() {
               defaultValue={placeholder}
               onChange={(e) => setText(e.target.value)}
               value={text}
-              sx={{ width: "100%" }}
+              style={{ width: 200 }}
             />
           </Card>
 
           <Card headerText="Previewer">
             <Paper
-              sx={{ p: "0.5em 2em 2em" }}
+              sx={{ p: "0.5em 2em 2em", minHeight: "100vh" }}
               id="previewer"
               dangerouslySetInnerHTML={{
                 __html: DOMPurify.sanitize(marked.parse(text))
@@ -50,7 +49,7 @@ export default function App() {
           </Card>
         </Stack>
         <Options resetEditor={() => setText(placeholder)} />
-      </Container>
+      </main>
     </ThemeProvider>
   );
 }

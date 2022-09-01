@@ -16,6 +16,11 @@ html {
   width: 100%;
 }
 
+.main__container {
+  padding: 2em;
+  min-height: 100vh;
+}
+
 #previewer blockquote {
   border-left: 4px solid var(--grey-500);
   background-color: var(--grey-100);
